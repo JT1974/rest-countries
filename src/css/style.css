@@ -1,2 +1,2 @@
-:root{--primary-color: white}*,*:after,*:before{margin:0;padding:0;box-sizing:border-box}
+:root{--text-color: hsl(200, 15%, 8%);--input-color: hsl(0, 0%, 52%);--elements-color: hsl(0, 0%, 100%);--background-color: hsl(0, 0%, 98%);--homepage-font-size: 14px;--details-page-font-size: 16px;--font-family: 'Nunito Sans', sans-serif;--font-weight-light: 300;--font-weight-semibold: 600;--font-weight-bold: 800}*,*:after,*:before{margin:0;padding:0;box-sizing:border-box}.darkmode{--text-color: hsl(0, 0%, 100%);--input-color: hsl(0, 0%, 100%);--elements-color: hsl(209, 23%, 22%);--background-color: hsl(207, 26%, 17%)}
 /*# sourceMappingURL=style.css.map */
