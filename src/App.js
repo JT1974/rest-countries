@@ -1,24 +1,91 @@
+/*
+	Your users should be able to:
+
+	See all countries from the API on the homepage
+	Search for a country using an input field
+	Filter countries by region
+	Click on a country to see more detailed information on a separate page
+	Click through to the border countries on the detail page
+	Toggle the color scheme between light and dark mode (optional)
+	
+*/
+
+import React, { useEffect, useState } from 'react'
+import Card from './components/Card'
+import Details from './components/Details'
+import Header from './components/Header'
+import Navbar from './components/Navbar'
+
 function App() {
-	/*
-		Your users should be able to:
+	const [data, setData] = useState([])
+	const [filter, setFilter] = useState({
+		property: null,
+		value: null,
+	})
+	const [activePage, setActivePage] = useState('home')
+	const [history, setHistory] = useState([])
 
-		See all countries from the API on the homepage
-		Search for a country using an input field
-		Filter countries by region
-		Click on a country to see more detailed information on a separate page
-		Click through to the border countries on the detail page
-		Toggle the color scheme between light and dark mode (optional)
+	useEffect(() => {
+		fetch(`https://restcountries.com/v3.1/all`)
+			.then(res => res.json())
+			.then(jsonData => setData(jsonData))
+	}, [])
 
+	const displayDetails = page => {
+		setHistory(prevHistory => [...prevHistory, activePage])
+		setActivePage(page)
+	}
 
-		Icons
-		Moon outline: <ion-icon name="moon-outline"></ion-icon>
-		Moon filled: <ion-icon name="moon"></ion-icon>
-		Search: <ion-icon name="search"></ion-icon>
-		Arrow back: <ion-icon name="arrow-back"></ion-icon>
-		Chevron down: <ion-icon name="chevron-down"></ion-icon>
-		
-	*/
-	return <div className='app'></div>
+	const goBackInHistory = () => {
+		const prevPage = history[history.length - 1]
+		if (history.length === 1) setHistory([])
+		else setHistory(prevHistory => [...prevHistory.slice(0, -1)])
+		setActivePage(prevPage)
+	}
+
+	const filteredData = !filter.property
+		? data
+		: data.filter(country =>
+				filter.property === 'region'
+					? country.region === filter.value
+					: country.name.common.toLowerCase().includes(filter.value)
+		  )
+
+	const cards = filteredData.map(({ name, capital, population, region, flags }, idx) => {
+		return (
+			<Card
+				key={idx}
+				name={name.common}
+				capital={capital}
+				population={population}
+				region={region}
+				flag={flags.svg}
+				handler={displayDetails}
+			/>
+		)
+	})
+
+	return (
+		<div className='app'>
+			<Header />
+			<main>
+				{activePage === 'home' ? (
+					<>
+						<Navbar filter={filter} handler={setFilter} />
+						<div className='country-card--container'>{cards}</div>
+					</>
+				) : (
+					<>
+						<button onClick={() => goBackInHistory()}>
+							<ion-icon name='arrow-back'></ion-icon>
+							Back
+						</button>
+						<Details name={activePage} data={data} handler={displayDetails} />
+					</>
+				)}
+			</main>
+		</div>
+	)
 }
 
 export default App
