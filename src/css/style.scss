@@ -24,6 +24,8 @@
 		Weights: 300, 600, 800
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 :root {
 	/* colors */
 	--text-color: hsl(200, 15%, 8%);
@@ -49,6 +51,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-family: var(--font-family);
+}
+
 .darkmode {
 	--text-color: hsl(0, 0%, 100%);
 	--input-color: hsl(0, 0%, 100%);
@@ -63,37 +69,137 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	row-gap: 2em;
+	gap: 1.5rem;
 }
 
-.country-card--container {
+header {
+	height: 5rem;
+	width: 100%;
+	background-color: var(--elements-color);
 	display: flex;
-	flex-direction: column;
-	row-gap: 1em;
+	justify-content: space-between;
 	align-items: center;
-}
+	padding: 0 1rem;
 
-img.country-card--flag {
-	width: 10em;
-	border: 1px solid black;
-}
-
-.country-card--data {
-	display: flex;
-	flex-direction: column;
-	row-gap: 0.25em;
-	align-items: center;
-
-	h2 {
-		font-size: 1.25em;
-		margin-bottom: 0.5em;
+	.title {
+		font-weight: var(--font-weight-bold);
+		font-size: 1rem;
+		color: var(--text-color);
 	}
 
-	p {
-		font-size: 0.85em;
+	span.dark-mode {
+		font-size: var(--homepage-font-size);
+		font-weight: var(--font-weight-semibold);
+		color: var(--text-color);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.625rem;
 
-		span {
-			font-weight: 600;
+		ion-icon {
+			font-size: var(--homepage-font-size);
+			color: var(--text-color);
+		}
+	}
+}
+
+main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 1rem;
+	row-gap: 2.4rem;
+
+	nav {
+		.search {
+			ion-icon {
+			}
+
+			&--text {
+			}
+		}
+
+		.filter {
+			button {
+				ion-icon {
+				}
+			}
+
+			&--list {
+				li {
+				}
+			}
+		}
+	}
+
+	.country-card--container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1em;
+		align-items: center;
+
+		.country-card {
+			img.country-card--flag {
+				width: 10em;
+				border: 1px solid black;
+			}
+
+			.country-card--data {
+				display: flex;
+				flex-direction: column;
+				row-gap: 0.25em;
+				align-items: center;
+
+				h2 {
+					font-size: 1.25em;
+					margin-bottom: 0.5em;
+				}
+
+				p {
+					font-size: 0.85em;
+
+					span {
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+
+	button {
+		ion-icon {
+		}
+	}
+
+	.country-details {
+		&--flag {
+		}
+
+		&--data {
+			h2 {
+			}
+
+			&__left {
+				p {
+					span {
+					}
+				}
+			}
+
+			&__right {
+				p {
+					span {
+					}
+				}
+			}
+
+			&__bottom {
+				p {
+					button.neighbour-btn {
+					}
+				}
+			}
 		}
 	}
 }

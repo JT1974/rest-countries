@@ -12,7 +12,7 @@ export default function Navbar({ filter, handler }) {
 					}
 				></ion-icon>
 				<input
-					className='search-text'
+					className='search--text'
 					name='search-text'
 					type='text'
 					placeholder='Search for a country...'
@@ -30,7 +30,7 @@ export default function Navbar({ filter, handler }) {
 					<ion-icon name='chevron-down'></ion-icon>
 				</button>
 				<ul
-					className='region-list'
+					className='filter--list'
 					onClick={e => {
 						if (e.target.innerText === 'All') handler({ property: null, value: null })
 						else handler({ property: 'region', value: e.target.innerText })

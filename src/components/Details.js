@@ -47,10 +47,10 @@ export default function Details({ name, data, handler }) {
 					</p>
 				</div>
 				<div className='country-details--data__bottom'>
-					<div>
+					<p>
 						Border countries:
 						{neighbours || 'none'}
-					</div>
+					</p>
 				</div>
 			</div>
 		</div>
