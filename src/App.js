@@ -51,11 +51,12 @@ function App() {
 					: country.name.common.toLowerCase().includes(filter.value)
 		  )
 
-	const cards = filteredData.map(({ name, capital, population, region, flags }, idx) => {
+	const cards = filteredData.map(({ name, altSpellings, capital, population, region, flags }, idx) => {
 		return (
 			<Card
 				key={idx}
-				name={name.common}
+				name={name}
+				altSpellings={altSpellings}
 				capital={capital}
 				population={population}
 				region={region}
@@ -72,7 +73,7 @@ function App() {
 				{activePage === 'home' ? (
 					<>
 						<Navbar filter={filter} handler={setFilter} />
-						<div className='country-card--container'>{cards}</div>
+						<section className='country-card--container'>{cards}</section>
 					</>
 				) : (
 					<>

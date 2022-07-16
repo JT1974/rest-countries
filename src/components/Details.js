@@ -11,6 +11,9 @@ export default function Details({ name, data, handler }) {
 		)
 	})
 
+	//DEBUG
+	console.log(data.find(country => country.name.common === name))
+
 	return (
 		<div className='country-details'>
 			<img className='country-details--flag' src={flags.svg} alt={name} title={name} />

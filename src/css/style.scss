@@ -34,13 +34,20 @@
 	--background-color: hsl(0, 0%, 98%);
 
 	/* typography */
-	--homepage-font-size: 14px;
-	--details-page-font-size: 16px;
+	--homepage-font-size: 0.875rem;
+	--details-page-font-size: 1rem;
 
 	--font-family: 'Nunito Sans', sans-serif;
 	--font-weight-light: 300;
 	--font-weight-semibold: 600;
 	--font-weight-bold: 800;
+
+	.darkmode {
+		--text-color: hsl(0, 0%, 100%);
+		--input-color: hsl(0, 0%, 100%);
+		--elements-color: hsl(209, 23%, 22%);
+		--background-color: hsl(207, 26%, 17%);
+	}
 }
 
 *,
@@ -55,13 +62,6 @@ html {
 	font-family: var(--font-family);
 }
 
-.darkmode {
-	--text-color: hsl(0, 0%, 100%);
-	--input-color: hsl(0, 0%, 100%);
-	--elements-color: hsl(209, 23%, 22%);
-	--background-color: hsl(207, 26%, 17%);
-}
-
 .app {
 	min-height: 100vh;
 	width: 100%;
@@ -70,9 +70,11 @@ html {
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5rem;
+	position: relative;
 }
 
 header {
+	position: fixed;
 	height: 5rem;
 	width: 100%;
 	background-color: var(--elements-color);
@@ -80,6 +82,8 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1rem;
+	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.03);
+	z-index: 3;
 
 	.title {
 		font-weight: var(--font-weight-bold);
@@ -95,76 +99,32 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		gap: 0.625rem;
+		cursor: pointer;
 
 		ion-icon {
-			font-size: var(--homepage-font-size);
+			font-size: 1.2rem;
 			color: var(--text-color);
+			cursor: pointer;
 		}
 	}
 }
 
 main {
+	margin-top: 8rem;
+	padding: 0 clamp(1rem, 5vw, 5rem);
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 1rem;
 	row-gap: 2.4rem;
 
-	nav {
-		.search {
-			ion-icon {
-			}
-
-			&--text {
-			}
-		}
-
-		.filter {
-			button {
-				ion-icon {
-				}
-			}
-
-			&--list {
-				li {
-				}
-			}
-		}
-	}
-
 	.country-card--container {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
-		row-gap: 1em;
+		row-gap: 2.5rem;
 		align-items: center;
-
-		.country-card {
-			img.country-card--flag {
-				width: 10em;
-				border: 1px solid black;
-			}
-
-			.country-card--data {
-				display: flex;
-				flex-direction: column;
-				row-gap: 0.25em;
-				align-items: center;
-
-				h2 {
-					font-size: 1.25em;
-					margin-bottom: 0.5em;
-				}
-
-				p {
-					font-size: 0.85em;
-
-					span {
-						font-weight: 600;
-					}
-				}
-			}
-		}
+		padding: 0 2.5rem 4rem;
 	}
 
 	button {
@@ -200,6 +160,20 @@ main {
 					}
 				}
 			}
+		}
+	}
+}
+
+@media screen and (min-width: 760px) {
+	main {
+		padding: 0 5rem;
+
+		.country-card--container {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			column-gap: 2.5rem;
+			padding: 0;
 		}
 	}
 }
