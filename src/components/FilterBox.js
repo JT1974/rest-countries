@@ -14,7 +14,7 @@ const Filter = styled.div`
 		justify-content: space-between;
 		border: none;
 		font-size: var(--homepage-font-size);
-		color: var(--input-color);
+		color: var(--text-color);
 		height: 3rem;
 		background-color: var(--elements-color);
 		border-radius: 0.3rem;
@@ -24,7 +24,7 @@ const Filter = styled.div`
 
 		ion-icon {
 			font-size: 1.2rem;
-			color: var(--input-color);
+			color: var(--text-color);
 			cursor: pointer;
 		}
 
@@ -43,7 +43,7 @@ const Filter = styled.div`
 		gap: 0.5rem;
 		border: none;
 		font-size: var(--homepage-font-size);
-		color: var(--input-color);
+		color: var(--text-color);
 		background-color: var(--elements-color);
 		border-radius: 0.3rem;
 		padding: 0.75rem 0;
@@ -78,7 +78,7 @@ export default function FilterBox({ filter, handler }) {
 		<Filter>
 			<button>
 				Filter by Region:
-				<span>{filter.property === 'region' ? filter.value : ''}</span>
+				<span>{filter.property === 'region' ? filter.value : 'All'}</span>
 				<ion-icon name='chevron-down'></ion-icon>
 			</button>
 			<ul

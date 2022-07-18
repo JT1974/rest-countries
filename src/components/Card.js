@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import Flag from './Flag'
 
 const CountryCard = styled.article`
 	width: 100%;
 	max-width: 16.5rem;
 	height: 23rem;
 	border-radius: 0.5rem;
+	overflow: hidden;
 	background-color: var(--elements-color);
 	display: flex;
 	flex-direction: column;
@@ -13,18 +15,7 @@ const CountryCard = styled.article`
 	cursor: pointer;
 	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.03);
 `
-const Flag = styled.div`
-	background-image: url('${props => props.flag}');
-	background-origin: border-box;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	justify-self: flex-start;
-	width: 100%;
-	max-width: 20rem;
-	height: 12rem;
-	border-radius: 0.5rem 0.5rem 0 0;
-`
+
 const Data = styled.div`
 	width: 100%;
 	display: flex;
@@ -53,7 +44,7 @@ const Data = styled.div`
 export default function Card({ handler, name, altSpellings, flag, population, region, capital }) {
 	return (
 		<CountryCard onClick={() => handler(name.common)} title={`${name.common}, ${region}`}>
-			<Flag flag={flag}></Flag>
+			<Flag src={flag}></Flag>
 			<Data>
 				<h2>{name.common ? name.common : altSpellings[altSpellings.length - 1]}</h2>
 				<p>

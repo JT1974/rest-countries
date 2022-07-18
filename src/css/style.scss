@@ -56,125 +56,14 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-html {
 	font-family: var(--font-family);
 }
 
-.app {
+body {
+	width: 100vw;
 	min-height: 100vh;
-	width: 100%;
-	background-color: var(--background-color);
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1.5rem;
-	position: relative;
-}
-
-header {
-	position: fixed;
-	height: 5rem;
-	width: 100%;
-	background-color: var(--elements-color);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 1rem;
-	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.03);
-	z-index: 3;
-
-	.title {
-		font-weight: var(--font-weight-bold);
-		font-size: 1rem;
-		color: var(--text-color);
-	}
-
-	span.dark-mode {
-		font-size: var(--homepage-font-size);
-		font-weight: var(--font-weight-semibold);
-		color: var(--text-color);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 0.625rem;
-		cursor: pointer;
-
-		ion-icon {
-			font-size: 1.2rem;
-			color: var(--text-color);
-			cursor: pointer;
-		}
-	}
-}
-
-main {
-	margin-top: 8rem;
-	padding: 0 clamp(1rem, 5vw, 5rem);
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	row-gap: 2.4rem;
-
-	.country-card--container {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		row-gap: 2.5rem;
-		align-items: center;
-		padding: 0 2.5rem 4rem;
-	}
-
-	button {
-		ion-icon {
-		}
-	}
-
-	.country-details {
-		&--flag {
-		}
-
-		&--data {
-			h2 {
-			}
-
-			&__left {
-				p {
-					span {
-					}
-				}
-			}
-
-			&__right {
-				p {
-					span {
-					}
-				}
-			}
-
-			&__bottom {
-				p {
-					button.neighbour-btn {
-					}
-				}
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 760px) {
-	main {
-		padding: 0 5rem;
-
-		.country-card--container {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			column-gap: 2.5rem;
-			padding: 0;
-		}
-	}
+	justify-content: center;
+	background: var(--background-color);
 }
 

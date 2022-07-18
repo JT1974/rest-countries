@@ -11,10 +11,76 @@
 */
 
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import Card from './components/Card'
 import Details from './components/Details'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
+
+const Application = styled.div`
+	min-height: 100vh;
+	width: 100vw;
+	max-width: 90rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	position: relative;
+`
+
+const Main = styled.main`
+	margin-top: 8rem;
+	padding: 0 clamp(1rem, 5vw, 5rem);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 2.4rem;
+
+	@media screen and (min-width: 760px) {
+		padding: 0 5rem;
+	}
+`
+
+const CardContainer = styled.section`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 2.5rem;
+	align-items: center;
+	padding: 0 2.5rem 4rem;
+
+	@media screen and (min-width: 760px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		column-gap: 2.5rem;
+		padding: 0;
+	}
+`
+
+const Button = styled.button`
+	align-self: flex-start;
+	width: 6.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: none;
+	font-size: var(--homepage-font-size);
+	color: var(--text-color);
+	height: 2rem;
+	background-color: var(--elements-color);
+	border-radius: 0.2rem;
+	padding: 0 1.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.05);
+
+	ion-icon {
+		font-size: 1rem;
+		color: var(--text-color);
+		cursor: pointer;
+	}
+`
 
 function App() {
 	const [data, setData] = useState([])
@@ -58,7 +124,7 @@ function App() {
 				name={name}
 				altSpellings={altSpellings}
 				capital={capital}
-				population={population}
+				population={new Intl.NumberFormat('en-IN').format(population)}
 				region={region}
 				flag={flags.svg}
 				handler={displayDetails}
@@ -67,25 +133,25 @@ function App() {
 	})
 
 	return (
-		<div className='app'>
+		<Application id='app'>
 			<Header />
-			<main>
+			<Main>
 				{activePage === 'home' ? (
 					<>
 						<Navbar filter={filter} handler={setFilter} />
-						<section className='country-card--container'>{cards}</section>
+						<CardContainer>{cards}</CardContainer>
 					</>
 				) : (
 					<>
-						<button onClick={() => goBackInHistory()}>
+						<Button onClick={() => goBackInHistory()}>
 							<ion-icon name='arrow-back'></ion-icon>
 							Back
-						</button>
+						</Button>
 						<Details name={activePage} data={data} handler={displayDetails} />
 					</>
 				)}
-			</main>
-		</div>
+			</Main>
+		</Application>
 	)
 }
 
