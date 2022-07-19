@@ -76,7 +76,11 @@ const Filter = styled.div`
 export default function FilterBox({ filter, handler }) {
 	return (
 		<Filter>
-			<button>
+			<button
+				onClick={e => {
+					e.target.closest('button').focus()
+				}}
+			>
 				Filter by Region:
 				<span>{filter.property === 'region' ? filter.value : 'All'}</span>
 				<ion-icon name='chevron-down'></ion-icon>

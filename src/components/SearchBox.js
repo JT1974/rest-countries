@@ -62,7 +62,9 @@ export default function SearchBox({ filter, handler }) {
 				onChange={e => setQuery(e.target.value)}
 				onKeyDown={e =>
 					e.key === 'Enter' &&
-					(query ? handler({ property: 'name', value: query }) : handler({ property: null, value: null }))
+					(query
+						? handler({ property: 'name', value: query.toLowerCase() })
+						: handler({ property: null, value: null }))
 				}
 			/>
 		</Search>
