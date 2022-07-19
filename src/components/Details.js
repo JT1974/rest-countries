@@ -124,33 +124,33 @@ export default function Details({ name, data, handler }) {
 					</p>
 					<p>
 						<span>Population:</span>
-						{new Intl.NumberFormat('en-EN').format(population)}
+						{population ? new Intl.NumberFormat('en-EN').format(population) : ''}
 					</p>
 					<p>
 						<span>Region:</span>
-						{region}
+						{region ? region : ''}
 					</p>
 					<p>
 						<span>Subregion:</span>
-						{subregion || 'none'}
+						{subregion ? subregion : ''}
 					</p>
 					<p>
 						<span>Capital:</span>
-						{capital || 'none'}
+						{capital ? capital : ''}
 					</p>
 				</div>
 				<div className='col-rt'>
 					<p>
 						<span>Top Level Domain:</span>
-						{tld.join(', ') || 'none'}
+						{tld ? tld.join(', ') : ''}
 					</p>
 					<p>
 						<span>Currencies:</span>
-						{currencies ? Object.values(currencies).map(obj => obj.name) : 'none'}
+						{currencies ? Object.values(currencies).map(obj => obj.name) : ''}
 					</p>
 					<p>
 						<span>Languages:</span>
-						{languages ? Object.values(languages).join(', ') : 'none'}
+						{languages ? Object.values(languages).join(', ') : ''}
 					</p>
 				</div>
 				<div className='col-bt'>
