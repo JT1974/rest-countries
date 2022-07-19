@@ -52,16 +52,11 @@ Users should be able to:
 
 ### Continued development
 
-I'm still not comfortable with Styled Components and more specifically prop passing (e.g. background-image src prop for a div), avoiding warnings about having multiple components with the same id (using the attrs() method of Styled Components).
-
-I found a good article from [Talia Marcassa - Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
-
-She also wrote about Styled Components' ThemeProvider and testing the styling of components with Jest, which topics also sound very interesting and I'm planning to look into these a bit later.
+Using Styled Components still causes some frustration, so I have to look into that a bit deeper.
 
 ### Useful resources
 
--   [Styled Componentns FAQ](https://styled-components.com/docs/faqs#when-to-use-attrs) - I've been wrestling with Styled Components in my latest projects with more, or less success, however I still could not get a grip on passing props to styled components. The doc is very useful in general, but I still haven't found the solution for the issueI described above.
--   [Talia Marcassa - Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21) - This is a really good article that I found during the debugging of the above issue. It's worth reading.
+-   [Talia Marcassa - Styled Components: To Use or Not to Use?](https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21) - This is a really good article that I found during the debugging one of the issues with Styled Components. It's worth reading.
 
 ## Author
 
