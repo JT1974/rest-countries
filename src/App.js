@@ -30,7 +30,7 @@ const Application = styled.div`
 `
 
 const Main = styled.main`
-	margin-top: 9rem;
+	margin: 9rem 0 5rem;
 	padding: 0 clamp(1rem, 5vw, 5rem);
 	width: 100%;
 	display: flex;
