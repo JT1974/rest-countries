@@ -16,6 +16,7 @@ import Card from './components/Card'
 import Details from './components/Details'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
+import Button from './components/Button'
 
 const Application = styled.div`
 	min-height: 100vh;
@@ -29,7 +30,7 @@ const Application = styled.div`
 `
 
 const Main = styled.main`
-	margin-top: 8rem;
+	margin-top: 9rem;
 	padding: 0 clamp(1rem, 5vw, 5rem);
 	width: 100%;
 	display: flex;
@@ -56,29 +57,6 @@ const CardContainer = styled.section`
 		justify-content: space-between;
 		column-gap: 2.5rem;
 		padding: 0;
-	}
-`
-
-const Button = styled.button`
-	align-self: flex-start;
-	width: 6.5rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border: none;
-	font-size: var(--homepage-font-size);
-	color: var(--text-color);
-	height: 2rem;
-	background-color: var(--elements-color);
-	border-radius: 0.2rem;
-	padding: 0 1.5rem;
-	cursor: pointer;
-	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.05);
-
-	ion-icon {
-		font-size: 1rem;
-		color: var(--text-color);
-		cursor: pointer;
 	}
 `
 
@@ -143,10 +121,7 @@ function App() {
 					</>
 				) : (
 					<>
-						<Button onClick={() => goBackInHistory()}>
-							<ion-icon name='arrow-back'></ion-icon>
-							Back
-						</Button>
+						<Button handler={goBackInHistory} />
 						<Details name={activePage} data={data} handler={displayDetails} />
 					</>
 				)}

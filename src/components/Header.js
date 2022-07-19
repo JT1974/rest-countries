@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Attribution from './Attribution'
 
 const HeaderContainer = styled.header`
 	position: fixed;
 	top: 0;
-	height: 5rem;
+	height: 6rem;
 	width: 100vw;
 	background-color: var(--elements-color);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 clamp(1rem, 5vw, 5rem);
 	box-shadow: 0 0 0.25rem 0.25rem rgba(0, 0, 0, 0.03);
 	z-index: 3;
 `
@@ -18,6 +19,7 @@ const HeaderContainer = styled.header`
 const Wrapper = styled.div`
 	width: 100%;
 	max-width: 90rem;
+	padding: 0 clamp(1rem, 5vw, 5rem);
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -57,6 +59,7 @@ export default function Header() {
 
 	return (
 		<HeaderContainer>
+			<Attribution />
 			<Wrapper>
 				<Title>Where in the world?</Title>
 				<DarkModeSwitch onClick={() => toggleDarkmode()}>
