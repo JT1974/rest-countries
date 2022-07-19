@@ -1,7 +1,6 @@
 {
 	"name": "rest-countries",
 	"version": "0.1.0",
-	"homepage": "https://github.com/JT1974/rest-countries/",
 	"private": true,
 	"dependencies": {
 		"react": "^18.2.0",
@@ -10,8 +9,6 @@
 		"styled-components": "^5.3.5"
 	},
 	"scripts": {
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"eject": "react-scripts eject"
@@ -37,4 +34,3 @@
 		"gh-pages": "^4.0.0"
 	}
 }
-
