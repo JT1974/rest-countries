@@ -29,9 +29,9 @@ Users should be able to:
 
 ### Screenshot
 
-![Light Theme - Mobile](./mobile.jpg) ![Dark Theme - Mobile](./mobile-dark.jpg)
+![Light Theme - Mobile](./mobile.jpg) ![Details page - Mobile](./details-mobile.jpg) ![Dark theme - Mobile](./mobile-dark.jpg)
 ![Light Theme - Desktop](./desktop.jpg)
-![Dark Theme - Desktop](./desktop-dark.jpg)
+![Details page - Desktop](./details-desktop.jpg)
 
 ### Links
 
