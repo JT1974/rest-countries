@@ -70,7 +70,9 @@ function App() {
 	const [history, setHistory] = useState([])
 
 	useEffect(() => {
-		fetch(`https://restcountries.com/v3.1/all`)
+		fetch(
+			`https://restcountries.com/v3.1/all?fields=name,altSpellings,capital,population,region,flags,subregion,tld,currencies,languages,borders,cca3`
+		)
 			.then(res => res.json())
 			.then(jsonData => setData(jsonData))
 	}, [])
