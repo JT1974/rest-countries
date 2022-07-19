@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Flag from './Flag'
 
-const CountryCard = styled.article`
+const CountryCard = styled.div`
 	width: 100%;
 	max-width: 16.5rem;
 	height: 23rem;

@@ -32,7 +32,7 @@ const Main = styled.main`
 	}
 `
 
-const CardContainer = styled.section`
+const CardContainer = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
