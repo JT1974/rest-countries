@@ -124,7 +124,7 @@ export default function Details({ name, data, handler }) {
 					</p>
 					<p>
 						<span>Population:</span>
-						{new Intl.NumberFormat('en-IN').format(population)}
+						{new Intl.NumberFormat('en-EN').format(population)}
 					</p>
 					<p>
 						<span>Region:</span>
@@ -142,7 +142,7 @@ export default function Details({ name, data, handler }) {
 				<div className='col-rt'>
 					<p>
 						<span>Top Level Domain:</span>
-						{tld || 'none'}
+						{tld.join(', ') || 'none'}
 					</p>
 					<p>
 						<span>Currencies:</span>

@@ -12,11 +12,11 @@
 
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import Button from './components/Button'
 import Card from './components/Card'
 import Details from './components/Details'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
-import Button from './components/Button'
 
 const Application = styled.div`
 	min-height: 100vh;
@@ -102,9 +102,9 @@ function App() {
 				name={name}
 				altSpellings={altSpellings}
 				capital={capital}
-				population={new Intl.NumberFormat('en-IN').format(population)}
+				population={new Intl.NumberFormat('en-EN').format(population)}
 				region={region}
-				flag={flags.svg}
+				flag={flags.png}
 				handler={displayDetails}
 			/>
 		)
