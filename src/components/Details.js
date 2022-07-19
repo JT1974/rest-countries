@@ -119,7 +119,7 @@ export default function Details({ name, data, handler }) {
 
 	return (
 		<DetailsContainer>
-			<img src={flags.svg} alt='' />
+			<img src={flags.svg} alt={name} />
 			<Data>
 				<h2>{name}</h2>
 				<div className='col-lt'>

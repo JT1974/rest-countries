@@ -44,7 +44,7 @@ const Data = styled.div`
 export default function Card({ handler, name, altSpellings, flag, population, region, capital }) {
 	return (
 		<CountryCard onClick={() => handler(name.common)} title={`${name.common}, ${region}`}>
-			<Flag src={flag}></Flag>
+			<Flag src={flag} alt={name.common} />
 			<Data>
 				<h2>{name.common ? name.common : altSpellings[altSpellings.length - 1]}</h2>
 				<p>
