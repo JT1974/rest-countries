@@ -1,15 +1,3 @@
-/*
-	Your users should be able to:
-
-	See all countries from the API on the homepage
-	Search for a country using an input field
-	Filter countries by region
-	Click on a country to see more detailed information on a separate page
-	Click through to the border countries on the detail page
-	Toggle the color scheme between light and dark mode (optional)
-	
-*/
-
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Button from './components/Button'
@@ -31,14 +19,15 @@ const Application = styled.div`
 
 const Main = styled.main`
 	margin: 9rem 0 5rem;
-	padding: 0 clamp(1rem, 5vw, 5rem);
+	padding: 0 2rem;
+	// clamp(1rem, 5vw, 5rem)
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	row-gap: 2.4rem;
 
-	@media screen and (min-width: 760px) {
+	@media screen and (min-width: 1050px) {
 		padding: 0 5rem;
 	}
 `
@@ -51,7 +40,7 @@ const CardContainer = styled.section`
 	align-items: center;
 	padding: 0 2.5rem 4rem;
 
-	@media screen and (min-width: 760px) {
+	@media screen and (min-width: 700px) {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;

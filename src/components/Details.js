@@ -7,7 +7,7 @@ const DetailsContainer = styled.div`
 	grid-template: auto auto / auto;
 	align-items: center;
 	justify-content: space-between;
-	gap: clamp(2rem, 10vw, 7.5rem);
+	gap: 2rem;
 	color: var(--text-color);
 	margin-top: 1.6rem;
 
@@ -17,13 +17,18 @@ const DetailsContainer = styled.div`
 		align-self: flex-start;
 	}
 
-	@media screen and (min-width: 850px) {
+	@media screen and (min-width: 650px) {
 		max-width: unset;
 		grid-template: auto / 20rem 1fr;
 	}
 
+	@media screen and (min-width: 850px) {
+		gap: 5rem;
+	}
+
 	@media screen and (min-width: 1200px) {
 		grid-template: auto / repeat(2, 1fr);
+		gap: 7.5rem;
 	}
 `
 

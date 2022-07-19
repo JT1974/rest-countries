@@ -26,7 +26,7 @@ const ButtonContainer = styled.button`
 export default function Button({ handler }) {
 	return (
 		<ButtonContainer onClick={handler}>
-			<ion-icon name='arrow-back'></ion-icon>
+			<ion-icon name='arrow-back-outline'></ion-icon>
 			Back
 		</ButtonContainer>
 	)

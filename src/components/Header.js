@@ -19,11 +19,15 @@ const HeaderContainer = styled.header`
 const Wrapper = styled.div`
 	width: 100%;
 	max-width: 90rem;
-	padding: 0 clamp(1rem, 5vw, 5rem);
+	padding: 0 2rem;
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media screen and (min-width: 1050px) {
+		padding: 0 5rem;
+	}
 `
 
 const Title = styled.h1`
